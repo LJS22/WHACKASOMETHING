@@ -1,4 +1,3 @@
-
 //Variable for the start button
 const button = document.getElementById("button");
 
@@ -17,9 +16,10 @@ const mole8 = document.getElementById("mole8");
 const mole9 = document.getElementById("mole9");
 
 let scoreCount = 0;
-let totalScore = 0;
+
 //Event to initialise scoring function
 document.addEventListener("click", () => {
+    let totalScore = 0;
     var scoreCount = (score());
     totalScore = totalScore + scoreCount;
     scoreDisplay.textContent = totalScore;
@@ -65,57 +65,47 @@ function score() {
     });
 }
 
-//Event to start function to start the game
-button.addEventListener("click", () => {
-    chooseMole()
-});
-
 //Variable and function for changing the time
-let t = 2000;
+let time = 3000;
 function changeTime() {
-    t = t / 2;
-}
+    time = time / 1.25;
+    return time;
+};
+time = (changeTime());
 
 //Function for displaying the mole
 function chooseMole() {
     //Variables for the random mole
+    changeTime();
     let numberValue = Math.floor(Math.random() * 9) + 1;
     if (numberValue === 1) {
         mole1.style.zIndex = ("1");
-        changeTime();
-        return;
+
     } else if (numberValue === 2) {
         mole2.style.zIndex = ("1");
-        changeTime();
-        return;
+
     } else if (numberValue === 3) {
         mole3.style.zIndex = ("1");
-        changeTime();
-        return;
+
     } else if (numberValue === 4) {
         mole4.style.zIndex = ("1");
-        changeTime();
-        return;
+
     } else if (numberValue === 5) {
         mole5.style.zIndex = ("1");
-        changeTime();
-        return;
+
     } else if (numberValue === 6) {
         mole6.style.zIndex = ("1");
-        changeTime();
-        return;
+
     } else if (numberValue === 7) {
         mole7.style.zIndex = ("1");
-        changeTime();
-        return;
+
     } else if (numberValue === 8) {
         mole8.style.zIndex = ("1");
-        changeTime();
-        return;
+
+
     } else if (numberValue === 9) {
         mole9.style.zIndex = ("1");
-        changeTime();
-        return;
+
     }
-}
+};
 
